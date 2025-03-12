@@ -1,9 +1,7 @@
 # Heart failure prediction model
 DSI - Cohort 5 - Team 0 project
 ## Members:
- + Tatiana Uemura  As a team, we decided to pick this dataset to analyze and work on:
-
-https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
+ + Tatiana Uemura
  + Evgenia Kveliashvili
  + Fiona He
  + Aqib Khan
