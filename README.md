@@ -23,10 +23,21 @@ Early detection of the people under cardiovascular risk can help to mitigate the
  + Identify features which contribute the most to the correct prediction
  + Evaluate model metrics (need to add which ones)
    
+## Exploratory data analysis
 To do that, we will be working on the following dataset:
 https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
 
 This dataset contains combined data from 5 sources and has a total of 918 observations (after 272 duplicates have been deleted). There are 12 attributes
-in this dataset. 
+in this dataset.
+
+For the project we plan to use following libraries:
+ + Numpy
+ + pandas
+ + matplotlib
+ + sklearn
+ + seaborn
+
+In order to understand the raw data we use Python and pandas, we also check dataset for missing values and determine whether we need to impute any missing values.
+
 
 
