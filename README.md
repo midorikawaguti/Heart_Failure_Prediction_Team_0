@@ -27,6 +27,6 @@ To do that, we will be working on the following dataset:
 https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
 
 This dataset contains combined data from 5 sources and has a total of 918 observations (after 272 duplicates have been deleted). There are 12 attributes
-in this dataset.
+in this dataset. 
 
 
