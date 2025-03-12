@@ -6,7 +6,7 @@ DSI - Cohort 5 - Team 0 project
  + Fiona He
  + Aqib Khan
  + Roslyn Bryan
- + Yunhui Han
+
 
 ## Business case
 
