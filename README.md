@@ -3,7 +3,6 @@ DSI - Cohort 5 - Team 0 project
 ## Members:
  + Tatiana Uemura
  + Evgenia Kveliashvili
- + Fiona He
  + Aqib Khan
  + Roslyn Bryan
 
