@@ -3,7 +3,6 @@ DSI - Cohort 5 - Team 0 project
 ## Members:
  + Tatiana Uemura
  + Evgenia Kveliashvili
- + Fiona He
  + Aqib Khan
  + Roslyn Bryan
 
@@ -15,7 +14,7 @@ According to the report provided by American Heart Association, CVD, listed as t
 United States in 2021. The economic burden of cardiovascular risk factors and overt cardiovascular disease is projected to increase substantially in
 the coming decades. Annual health care costs are projected to almost quadruple, from $393 billion to $1490 billion, and productivity losses are
 projected to increase by 54%, from $234 billion to $361 billion.(https://www.ahajournals.org/doi/10.1161/CIR.0000000000001258)
-Early detection of the people under cardiovascular risk can help to mitigate the financial burden on the healthcare system and improve preventive measures to manage this widespread condition.
+Early detection of the people under cardiovascular risk can help to mitigate the financial burden on the healthcare system and improve preventive measures to manage this widespread condition. Preventive strategies should rely on screening for CVD risks or ealry detection in asymptomatic individuals. In this project we aim in determining factors(variables) that can predict CVD before the person with heart failure will be admitted in the hospital in life-thretening condition
 
 ## Project task
 Classification question: Which demographic, clinical, and exercise-related features are the most significant predictors of heart disease?
