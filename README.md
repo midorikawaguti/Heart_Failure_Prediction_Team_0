@@ -10,22 +10,23 @@ DSI - Cohort 5 - Team 0 project
 ## Business case
 
 Cardiovascular diseases (CVDs) remain a leading global health concern, with significant impacts on both mortality rates and economic stability.
-According to the report provided by American Heart Association, CVD, listed as the underlying cause of death, accounted for 931,578 deaths in the
-United States in 2021. The economic burden of cardiovascular risk factors and overt cardiovascular disease is projected to increase substantially in
-the coming decades. Annual health care costs are projected to almost quadruple, from $393 billion to $1490 billion, and productivity losses are
+According to the report provided by American Heart Association, CVD, listed as the underlying cause of death, accounted for 931,578 deaths in the United States in 2021. The economic burden of cardiovascular risk factors and overt cardiovascular disease is projected to increase substantially in the coming decades. Annual health care costs are projected to almost quadruple, from $393 billion to $1490 billion, and productivity losses are
 projected to increase by 54%, from $234 billion to $361 billion.(https://www.ahajournals.org/doi/10.1161/CIR.0000000000001258)
-Early detection of the people under cardiovascular risk can help to mitigate the financial burden on the healthcare system and improve preventive measures to manage this widespread condition. Preventive strategies should rely on screening for CVD risks or ealry detection in asymptomatic individuals. In this project we aim in determining factors(variables) that can predict CVD before the person with heart failure will be admitted in the hospital in life-thretening condition
-
-## Project task
-Classification question: Which demographic, clinical, and exercise-related features are the most significant predictors of heart disease?
+Early detection of the people under cardiovascular risk can help to mitigate the financial burden on the healthcare system and improve preventive measures to manage this widespread condition. Preventive strategies should rely on screening for CVD risks in asymptomatic individuals. In this project we aim in determining factors(variables) that can predict CVD before the person with heart failure will be admitted in the hospital in life-thretening condition
 
 ## Objective
+Conduct exploratory data analyses, create visualization and build predictive model of demographic, clinical, and exercise-related features that are the most significant predictors of heart disease.
+
+## Target audience
+ + Healthcare policy makers  - to help them roll out preventive programs for early detection screenings, better allocate financial resources and implement targeted campaigns
+ 
+
+## Project task
  + Analyze the downloaded dataset
+ + Examine different visualizations to draw new insights
  + Build Machine Learning classification model to predict heart failure based on clinical, demographic and exersize-related features
- + Identify most precise features which contribute to the correct prediction
- + Evaluate model metrics (!!!!need to add which ones)
-   
-## Exploratory data analysis
+
+## Dataset review
 The dataset our team will be working on:
 https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
 
@@ -43,6 +44,7 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression]
 - **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
+
 In order to execute the project we plan to use following libraries:
  + Numpy
  + pandas
@@ -50,12 +52,16 @@ In order to execute the project we plan to use following libraries:
  + sklearn
  + seaborn
 
-In order to understand the raw data we use Python and pandas, we also check dataset for missing values and determine whether we need to impute any missing values.
-Luckily, the dataset does not miss any values so we can use all 918 observations across 12 atributes in order to build the model.
+## Data preprocessing
 
-Once the data cleaning and preparation are complete the classification model can be built.
+ + Reviewed dataset to make sure that missing values are addressed properly, if any
+ + 
+ + 
 
+   
+## Exploratory data analysis
 
-
-
+ + Build scatterplot to examine possible correlations between SL_Slope (reading on ECG of ST segment) and Oldpeak (numeric measurements of the ST slope on ECG)
+ + 
+ + 
 
