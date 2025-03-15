@@ -63,8 +63,8 @@ In order to execute the project we plan to use following libraries:
 ## Data preprocessing
 
  + Reviewed dataset to make sure that missing values are addressed properly, if any
- + 
- + 
+ + Reviewed dataset to look for duplicate values
+ + Reveiwed dataset to look for non numeric data
 
    
 ## Exploratory data analysis
