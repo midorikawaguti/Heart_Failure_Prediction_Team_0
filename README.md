@@ -32,7 +32,7 @@ Conduct exploratory data analyses, create visualization and build predictive mod
 ## Project task
  + Analyze the downloaded dataset
  + Examine different visualizations to draw new insights
- + Build Machine Learning classification model to predict heart failure based on clinical, demographic and exersize-related features
+ + Build Machine Learning classification model to predict heart failure based on clinical, demographic and exersize-related features and determine what features have bigger impact on prediction
 
 ## Dataset review
 The dataset our team will be working on:
@@ -62,12 +62,21 @@ In order to execute the project we plan to use following libraries:
 
 ## Data preprocessing
 
- + Reviewed dataset to make sure that missing values are addressed properly, if any
- + 
- + 
+ + Before performing any preprocessing, we reviewed the dataset to check for missing values. Ensuring data completeness is crucial for building reliable models or vizualizations. After inspecting the dataset, we confirmed that there are no missing values.
+ + To ensure a consistent dataset, we checked if any columns have 0 values and if it does, whether 0 values are possible records. Only one column contained 0 values with we considered as wrong data. We replaced all occurrences of 0 (there are 172 records in dataset) in numerical column Cholesterol with the mean of that column.
+ + In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding or label encoder, depending on the use case.
 
    
 ## Exploratory data analysis
+ + Examined data showed 
+ ```# Create a correlation heatmap to analyze the data
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+sns.heatmap(data.corr(), annot=True, cmap='coolwarm', fmt='.2f')
+plt.title('Correlation Heatmap')
+plt.show()
 
  + Build scatterplot to examine possible correlations between SL_Slope (reading on ECG of ST segment) and Oldpeak (numeric measurements of the ST slope on ECG)
  + Create statistical summaries and feature distributions
