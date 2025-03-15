@@ -32,7 +32,7 @@ Conduct exploratory data analyses, create visualization and build predictive mod
 ## Project task
  + Analyze the downloaded dataset
  + Examine different visualizations to draw new insights
- + Build Machine Learning classification model to predict heart failure based on clinical, demographic and exersize-related features
+ + Build Machine Learning classification model to predict heart failure based on clinical, demographic and exersize-related features and determine what features have bigger impact on prediction
 
 ## Dataset review
 The dataset our team will be working on:
@@ -62,16 +62,58 @@ In order to execute the project we plan to use following libraries:
 
 ## Data preprocessing
 
- + Reviewed dataset to make sure that missing values are addressed properly, if any
- + Reviewed dataset to look for duplicate values
- + Reveiwed dataset to look for non numeric data
+ + In order to understand the dataset we checked it's basic structure and content.
+ + Before performing any preprocessing, we reviewed the dataset to check for missing values. Ensuring data completeness is crucial for building reliable models or vizualizations. After inspecting the dataset, we confirmed that there are no missing values.
+ + To ensure a consistent dataset, we checked if any columns have 0 values and if it does, whether 0 values are possible records. Only one column contained 0 values with we considered as wrong data. We replaced all occurrences of 0 (there are 172 records in dataset) in numerical column Cholesterol with the mean of that column.
+ + In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding or label encoder, depending on the use case.
+
 
    
 ## Exploratory data analysis
+ + Created correlation heatmap to analyze how features correlate to  each other. Darker and more intense colours represent stronger relationships(positive or negative). Neutral colours indicate weaker or no relationships.
 
- + Build scatterplot to examine possible correlations between SL_Slope (reading on ECG of ST segment) and Oldpeak (numeric measurements of the ST slope on ECG)
- + Create statistical summaries and feature distributions
- + Build visualization of feature correlations to uncover relationships.
+![alt text](images/correlation-heatmap.png)
+
+*Observations from the above visualization:*
+*1. ST_Slope and Oldpeak (-0.50):*
+*A moderate negative correlation of -0.50 indicates that as ST_Slope decreases, Oldpeak tends to increase.*
+*In medical terms, ST_Slope describes the slope of the ST segment in an ECG, and Oldpeak refers to ST depress relative to rest, often linked to heart stress or ischemia.* 
+*This negative correlation suggests that patients with more severe ST depression (higher Oldpeak) may also have downward or less favourable ST slopes.*
+*2. HeartDisease and ST_Slope (-0.56):*
+*The negative correlation of -0.56 is stronger, showing a more pronounced inverse relationship. As ST_Slope values decrease, the likelihood of HeartDisease increases.*
+*In the medical field, certain ST slope patterns are considered significant indicators of heart disease. A flatter or downward slope is often linked to poorer heart function*
+
+ + A scatterplot was constructed to investigate deeper the potential correlation between SL_Slope (representing the ST segment slope as recorded on an ECG) and Oldpeak (a numerical measurement indicating ST depression relative to rest). The scatterplot provides a visual representation of the relationship between these two variables, helping to identify patterns, trends, or potential linear associations.
+
+![alt text](images/St-slope-Oldpeak-correlation.png)
+
+### The visual representation of ST slope and St depression info from ECG readings
+![alt text](images/ST-segment-depression-upsloping-downsloping-horizontal.png)
+
+*We can see that significant number of heart failure cases occur with ST_slope reading flat or down, also oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition*
+*This finding also support the fact that mild ST depression (less than 0.5 mm) is often considered a normal variant and may occur during physical exercise or in the absence of other abnormalities.* 
+*While significant ST depression (0.5 mm or more) can indicate myocardial ischemia (reduced blood flow to the heart muscle) and warrants further evaluation.*
+
+ + Created statistical summaries:
+Average Age (Heart Disease): 55.90 | Male: 55.87 | Female: 56.18  
+Males with Heart Disease: 90.16% | Females: 9.84%  
+RestingBP: 134.19, Cholesterol: 175.94, FastingBS: 0.33, MaxHR: 127.66  
+Total Average: 109.53  
+RestingBP Contribution: 122.51%  
+Cholesterol Contribution: 160.63%  
+FastingBS Contribution: 0.31%  
+MaxHR Contribution: 116.55%  
+The percentage of males with Heart Disease is: 90.16%  
+The percentage of females with Heart Disease is: 9.84%  
+
+![alt text](images/distribution-features-over-age.png)
+
+*Some observations from the above visualization:*
+
+*1.People in the 20-29 age group are less likely to have HeartDisease.*
+*2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.*
+*3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.*
+*4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8*
 
 ## Insights and visualizations
 
