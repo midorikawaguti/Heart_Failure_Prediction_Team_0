@@ -70,27 +70,27 @@ In order to execute the project we plan to use following libraries:
 ## Exploratory data analysis
  + Created correlation heatmap to analyze how features correlate to  each other. Darker and more intense colours represent stronger relationships(positive or negative). Neutral colours indicate weaker or no relationships.
 
-![alt text](images/image.png)
+![alt text](images/correlation-heatmap.png)
 
-*Analysis:
-1. ST_Slope and Oldpeak (-0.50):
-A moderate negative correlation of -0.50 indicates that as ST_Slope decreases, Oldpeak tends to increase.
-In medical terms, ST_Slope describes the slope of the ST segment in an ECG, and Oldpeak refers to ST depress relative to rest, often linked to heart stress or ischemia. 
-This negative correlation suggests that patients with more severe ST depression (higher Oldpeak) may also have downward or less favourable ST slopes.
-2. HeartDisease and ST_Slope (-0.56):
-The negative correlation of -0.56 is stronger, showing a more pronounced inverse relationship. As ST_Slope values decrease, the likelihood of HeartDisease increases.
-In the medical field, certain ST slope patterns are considered significant indicators of heart disease. A flatter or downward slope is often linked to poorer heart function.*
+*Observations from the above visualization:*
+*ST_Slope and Oldpeak (-0.50):*
+*A moderate negative correlation of -0.50 indicates that as ST_Slope decreases, Oldpeak tends to increase.*
+*In medical terms, ST_Slope describes the slope of the ST segment in an ECG, and Oldpeak refers to ST depress relative to rest, often linked to heart stress or ischemia.* 
+*This negative correlation suggests that patients with more severe ST depression (higher Oldpeak) may also have downward or less favourable ST slopes.*
+*HeartDisease and ST_Slope (-0.56):*
+*The negative correlation of -0.56 is stronger, showing a more pronounced inverse relationship. As ST_Slope values decrease, the likelihood of HeartDisease increases.*
+*In the medical field, certain ST slope patterns are considered significant indicators of heart disease. A flatter or downward slope is often linked to poorer heart function*
 
  + A scatterplot was constructed to investigate deeper the potential correlation between SL_Slope (representing the ST segment slope as recorded on an ECG) and Oldpeak (a numerical measurement indicating ST depression relative to rest). The scatterplot provides a visual representation of the relationship between these two variables, helping to identify patterns, trends, or potential linear associations.
 
-![alt text](images/image-2.png)
+![alt text](images/St-slope-Oldpeak-correlation.png)
 
 ### The visual representation of ST slope and St depression info from ECG readings
 ![alt text](images/ST-segment-depression-upsloping-downsloping-horizontal.png)
 
-*We can see that significant number of heart failure cases occur with ST_slope reading flat or down, also oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition
-This finding also support the fact that mild ST depression (less than 0.5 mm) is often considered a normal variant and may occur during physical exercise or in the absence of other abnormalities. 
-While significant ST depression (0.5 mm or more) can indicate myocardial ischemia (reduced blood flow to the heart muscle) and warrants further evaluation.*
+*We can see that significant number of heart failure cases occur with ST_slope reading flat or down, also oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition*
+*This finding also support the fact that mild ST depression (less than 0.5 mm) is often considered a normal variant and may occur during physical exercise or in the absence of other abnormalities.* 
+*While significant ST depression (0.5 mm or more) can indicate myocardial ischemia (reduced blood flow to the heart muscle) and warrants further evaluation.*
 
  + Created statistical summaries:
 Average Age (Heart Disease): 55.90 | Male: 55.87 | Female: 56.18
@@ -106,15 +106,15 @@ The percentage of females with Heart Disease is: 9.84%
 
 ![alt text](images/distribution-features-over-age.png)
 
-*Some obesrvations from the above visualization:
+*Some observations from the above visualization:*
 
-1.People in the 20-29 age group are less likely to have HeartDisease.
+*1.People in the 20-29 age group are less likely to have HeartDisease.*
 
-2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.
+*2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.*
 
-3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.
+*3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.*
 
-4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8*
+*4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8*
 
 ## Insights and visualizations
 
