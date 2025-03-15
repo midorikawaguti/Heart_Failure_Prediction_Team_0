@@ -61,10 +61,12 @@ In order to execute the project we plan to use following libraries:
  + seaborn
 
 ## Data preprocessing
+
  + In order to understand the dataset we checked it's basic structure and content.
  + Before performing any preprocessing, we reviewed the dataset to check for missing values. Ensuring data completeness is crucial for building reliable models or vizualizations. After inspecting the dataset, we confirmed that there are no missing values.
  + To ensure a consistent dataset, we checked if any columns have 0 values and if it does, whether 0 values are possible records. Only one column contained 0 values with we considered as wrong data. We replaced all occurrences of 0 (there are 172 records in dataset) in numerical column Cholesterol with the mean of that column.
  + In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding or label encoder, depending on the use case.
+
 
    
 ## Exploratory data analysis
