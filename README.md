@@ -1,10 +1,10 @@
 # Heart failure prediction model
 DSI - Cohort 5 - Team 0 project
 ## Members:
- + Tatiana Uemura
- + Evgenia Kveliashvili
- + Aqib Khan
- + Roslyn Bryan
+ + Tatiana Uemura [link](https://github.com/midorikawaguti)
+ + Evgenia Kveliashvili [link](https://github.com/ekveliasvili)
+ + Aqib Khan [link](https://github.com/aqibkhan3)
+ + Roslyn Bryan [link](https://github.com/RMB2025)
 
 ## Overview
 
@@ -39,15 +39,24 @@ This dataset contains combined data from 5 independent sources and has a total o
  #### Each row represents a single person:
 - **`Age`** : age of the patient [years]
 - **`Sex`** : sex of the patient [M: Male, F: Female]
-- **`ChestPainType`** : chest pain type [TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic]
+- **`ChestPainType`** : chest pain type [
+    TA: Typical Angina, or common heart related chest pain;
+    ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;
+    NAP: Non-Anginal Pain, pain not related to heart;
+    ASY: Asymptomatic, or lack of pain but not nessesarily absence of heart issues]
 - **`RestingBP`** : resting blood pressure [mm Hg]
 - **`Cholesterol`** : serum cholesterol [mm/dl]
 - **`FastingBS`** : fasting blood sugar [1: if FastingBS > 120 mg/dl, 0: otherwise]
-- **`RestingECG`** : resting electrocardiogram results [Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
+- **`RestingECG`** : resting electrocardiogram results [
+    Normal: Normal, 
+    ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), 
+    LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
 - **`MaxHR`** : maximum heart rate achieved [Numeric value between 60 and 202]
-- **`ExerciseAngina`** : exercise-induced angina [Y: Yes, N: No]
-- **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression]
-- **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
+- **`ExerciseAngina`** : exercise-induced angina, or chest pain during physical activity [Y: Yes, N: No]
+- **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression] 
+*ST depression refers to a finding on an electrocardiogram, wherein the* *trace in the ST segment is abnormally low below the baseline.*
+![link](/Users/evgeniakveliashvili/Desktop/DSI_projects/Heart_Failure_Prediction_Team_0/images/ST_depression_illustration.png)
+- **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping] from ECG readings
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
 
 In order to execute the project we plan to use following libraries:
@@ -63,6 +72,11 @@ In order to execute the project we plan to use following libraries:
  + Before performing any preprocessing, we reviewed the dataset to check for missing values. Ensuring data completeness is crucial for building reliable models or vizualizations. After inspecting the dataset, we confirmed that there were no missing values.
  + To ensure a consistent dataset, we checked if any columns had 0 values and if it did, whether 0 values were possible records. Only one column contained 0 values which we considered as wrong data. We replaced all occurrences of 0 (there are 172 records in dataset) in numerical column Cholesterol with the mean of that column.
  + In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding or label encoder, depending on the use case.
+
+## Risks and unknowns
+During internal discussion with the team we uncovered the following risks:
+ + Column "Cholesterol" contains 0 values, and while rare genetic condirtions might cause cholesterol level be very low, it's extremely unlikely to be measured at 0. That means, that we need either to impute some values instead of 0 or delete 172 records from the dataset.If we choose to delete these records, we may risk losing valuable information, potentially affecting the robustness and accuracy of our analysis. On the other hand, imputing mean values comes with its own challenges, such as introducing bias or assumptions that may not accurately reflect the true distribution of cholesterol levels.
+
 
 ## Exploratory data analysis
  + Created correlation heatmap to analyze how features correlate to  each other. Darker and more intense colours represent stronger relationships(positive or negative). Neutral colours indicate weaker or no relationships.
