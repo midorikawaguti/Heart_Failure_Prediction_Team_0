@@ -58,7 +58,10 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
 
-  ![alt text](images/data_overview.png)
+<p align="center">
+  <img src="images/Raw_data_Overview.png" width="80%" height="80%">
+</p>
+
 
 In order to execute the project we plan to use following libraries:
  + Numpy
@@ -75,11 +78,40 @@ In order to execute the project we plan to use following libraries:
  + In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding, and scaled numerical features Standardization (via StandardScaler).
 
 ## Exploratory data analysis
- 1. **Correlation Heatmap**
+ 
+ 1. **Statistical summaries:**
+ - **Average Age (Heart Disease):** 55.90 | Male: 55.87 | Female: 56.18
+ - **Males with Heart Disease:** 90.16% | Females: 9.84%
+ - **RestingBP: 134.19, Cholesterol:** 175.94, FastingBS: 0.33, MaxHR: 127.66
+ - **Total Average:** 109.53
+ - **RestingBP Contribution:** 122.51%
+ - **Cholesterol Contribution:** 160.63%
+ - **FastingBS Contribution:** 0.31%
+ - **MaxHR Contribution:** 116.55%
+
+<p align="center">
+  <img src="images/distributions_features_over_age.png" width="70%" height="70%">
+</p>
+
+<p align="center">
+  <img src="images/proportions_categorical_features.png" width="70%" height="70%">
+</p>
+
+
+*Observations:*
+
+1.People in the 20-29 age group are less likely to have HeartDisease.
+- 2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.
+- 3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.
+- 4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8
+
+
+2. **Correlation Heatmap**
+    
   Analyze how features correlate to  each other. Darker and more intense colours represent stronger relationships(positive or negative). Neutral colours indicate weaker or no     
   relationships.
 
-![alt text](images/correlation-heatmap.png)
+![alt text](images/Heatmap.png)
 
 *Observations:*
 1. **ST_Slope and Oldpeak (-0.50):**
@@ -92,38 +124,30 @@ In order to execute the project we plan to use following libraries:
    - In the medical field, certain ST slope patterns are considered significant indicators of heart disease. A flatter or downward slope is often linked to poorer heart function
 
 ### The visual representation of ST slope and St depression info from ECG readings
-![alt text](images/ST-segment-depression-upsloping-downsloping-horizontal.png)
+
+<p align="center">
+  <img src="images/ST-segment-depression-upsloping-downsloping-horizontal.png" width="70%" height="70%">
+</p>
 
  + A scatterplot was constructed to investigate deeper the potential correlation between SL_Slope (representing the ST segment slope as recorded on an ECG) and Oldpeak (a numerical measurement indicating ST depression relative to rest). The scatterplot provides a visual representation of the relationship between these two variables, helping to identify patterns, trends, or potential linear associations.
 
-![alt text](images/St-slope-Oldpeak-correlation.png)
+<p align="center">
+  <img src="images/ST_slope_Old_peak.png" width="70%" height="70%">
+</p>
 
-![alt text](images/ST_slope_Old_peak.png)
+<p align="center">
+  <img src="images/ST_slope_Oldpeak_proportions.png" width="70%" height="70%">
+</p>
 
  - We can see that a significant number of heart failure cases occur with ST_slope reading flat or down, also oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition
  - This finding also support the fact that mild ST depression (less than 0.5 mm) is often considered a normal variant and may occur during physical exercise or in the absence of other abnormalities.
  - While significant ST depression (0.5 mm or more) can indicate myocardial ischemia (reduced blood flow to the heart muscle) and warrants further evaluation.*
 
- 2. **Statistical summaries:**
- - **Average Age (Heart Disease):** 55.90 | Male: 55.87 | Female: 56.18
- - **Males with Heart Disease:** 90.16% | Females: 9.84%
- - **RestingBP: 134.19, Cholesterol:** 175.94, FastingBS: 0.33, MaxHR: 127.66
- - **Total Average:** 109.53
- - **RestingBP Contribution:** 122.51%
- - **Cholesterol Contribution:** 160.63%
- - **FastingBS Contribution:** 0.31%
- - **MaxHR Contribution:** 116.55%
- - **The percentage of males with Heart Disease is:** 90.16%
- - **The percentage of females with Heart Disease is:** 9.84%  
 
-![alt text](images/distribution-features-over-age.png)
+3. **Shap Summary**
+![alt text](images/ShapSummary.png)
 
 *Observations:*
-
-1.People in the 20-29 age group are less likely to have HeartDisease.
-- 2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.
-- 3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.
-- 4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8
 
 ## Conclusion
 
