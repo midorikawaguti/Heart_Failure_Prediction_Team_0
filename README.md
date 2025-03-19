@@ -29,7 +29,7 @@ Early identification of individuals at risk of cardiovascular disease is crucial
     - *Methodology:* examine the structure of the dataset, types of variables, and quality issues, such as missing values (e.g. Cholesterol).
 2. **Exploratory Data Analysis and Visualizations**
     - *Task:* Examine different visualizations to draw new insights
-    - *Methodology:* Perform exploratory data analysis and create visualizations to explore the relationship between the feature and the target variable (Presence or not of heart disease)
+    - *Methodology:* Perform exploratory data analysis and create visualizations to explore the relationship between the feature and the target variable  (Presence or not of heart disease)
 4. **Predictive Modeling**
    - *Task:* Build a machine learning classification model to predict heart failure.
    - *Methodology:*
@@ -38,9 +38,9 @@ Early identification of individuals at risk of cardiovascular disease is crucial
      - Evaluate the model using metrics, such as, accuracy, precision, recall, and F1-score.
 6. **Insights and Feature importance Visualizations**
     - *Task:* Determine the features with biggest impact on predictions and visualize the insights.
-    - *Methodology:* Analyze the model's predictions with SHAP values and visualizations to interpret the feature importance, and which contribute the most for heart disease                             prediction.
+    - *Methodology:* Analyze the model's predictions with SHAP values and visualizations to interpret the feature importance, and which contribute the most for        heart disease prediction.
 
-## Dataset review
+## Dataset Overview
 The dataset our team will be working on: [Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction) from Kaggle.
 
 This dataset contains combined data from 5 independent sources and has a total of 918 observations (after 272 duplicates had been deleted). There are 12 attributes in this dataset:
@@ -57,6 +57,8 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression]
 - **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
+
+  ![alt text](images/data_overview.png)
 
 In order to execute the project we plan to use following libraries:
  + Numpy
@@ -116,9 +118,9 @@ In order to execute the project we plan to use following libraries:
 
 ![alt text](images/distribution-features-over-age.png)
 
-*Some observations from the above visualization:*
+*Observations:*
 
-- 1.People in the 20-29 age group are less likely to have HeartDisease.
+1.People in the 20-29 age group are less likely to have HeartDisease.
 - 2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.
 - 3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.
 - 4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8
