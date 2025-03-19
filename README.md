@@ -21,7 +21,7 @@ Early identification of individuals at risk of cardiovascular disease is crucial
 
 ## Target audience
  + **Healthcare policy makers**  - to help them roll out preventive programs for early detection screenings, better allocate financial resources and implement targeted campaigns.
- + **Researchers** - to understand the impact of the different features on risk of heart disease.
+ + **Researchers** - to understand the impact of the different features on potential risks of heart disease.
  
 ## Project Methodology and Tasks
 1. **Data Understanding**
@@ -48,17 +48,17 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`Age`** : age of the patient [years]
 - **`Sex`** : sex of the patient [M: Male, F: Female]
 - **`ChestPainType`** : chest pain type [
-    TA: Typical Angina, or common heart related chest pain;
-    ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;
-    NAP: Non-Anginal Pain, pain not related to heart;
-    ASY: Asymptomatic, or lack of pain but not nessesarily absence of heart issues]
+    TA: Typical Angina, or common heart related chest pain;  
+    ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;  
+    NAP: Non-Anginal Pain, pain not related to heart;  
+    ASY: Asymptomatic, or lack of pain but not nessesarily absence of heart issues]  
 - **`RestingBP`** : resting blood pressure [mm Hg]
 - **`Cholesterol`** : serum cholesterol [mm/dl]
 - **`FastingBS`** : fasting blood sugar [1: if FastingBS > 120 mg/dl, 0: otherwise]
 - **`RestingECG`** : resting electrocardiogram results [
-    Normal: Normal, 
-    ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), 
-    LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
+    Normal: Normal,   
+    ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV),   
+    LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]  
 - **`MaxHR`** : maximum heart rate achieved [Numeric value between 60 and 202]
 - **`ExerciseAngina`** : exercise-induced angina, or chest pain during physical activity [Y: Yes, N: No]
 - **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression] 
@@ -105,7 +105,7 @@ During internal discussion with the team we uncovered the following risks:
    - The negative correlation of -0.56 is stronger, showing a more pronounced inverse relationship. As ST_Slope values decrease, the likelihood of HeartDisease increases.
    - In the medical field, certain ST slope patterns are considered significant indicators of heart disease. A flatter or downward slope is often linked to poorer heart function
 
-### The visual representation of ST slope and St depression info from ECG readings
+### The visual representation of ST slope and ST depression info from ECG readings
 ![alt text](images/ST-segment-depression-upsloping-downsloping-horizontal.png)
 
  + A scatterplot was constructed to investigate deeper the potential correlation between SL_Slope (representing the ST segment slope as recorded on an ECG) and Oldpeak (a numerical measurement indicating ST depression relative to rest). The scatterplot provides a visual representation of the relationship between these two variables, helping to identify patterns, trends, or potential linear associations.
@@ -118,26 +118,43 @@ During internal discussion with the team we uncovered the following risks:
  - This finding also support the fact that mild ST depression (less than 0.5 mm) is often considered a normal variant and may occur during physical exercise or in the absence of other abnormalities.
  - While significant ST depression (0.5 mm or more) can indicate myocardial ischemia (reduced blood flow to the heart muscle) and warrants further evaluation.*
 
- 2. **Statistical summaries:**
- - **Average Age (Heart Disease):** 55.90 | Male: 55.87 | Female: 56.18
- - **Males with Heart Disease:** 90.16% | Females: 9.84%
- - **RestingBP: 134.19, Cholesterol:** 175.94, FastingBS: 0.33, MaxHR: 127.66
- - **Total Average:** 109.53
- - **RestingBP Contribution:** 122.51%
- - **Cholesterol Contribution:** 160.63%
- - **FastingBS Contribution:** 0.31%
- - **MaxHR Contribution:** 116.55%
- - **The percentage of males with Heart Disease is:** 90.16%
- - **The percentage of females with Heart Disease is:** 9.84%  
+ 2. **Distrubition of each of 12 features from our dataset**
+ We have build the visualization to review how each of 12 features distributed in our dataset
+
+![alt text](image-1.png)
+
+ *Observations from the above visualization:*
+
+ - Age distribution seems to be normal with most people centered around 45-60 y.o  
+ - There are more males than females in dataset, suggesting that we might need to consider stratification when building the predictive model.  
+ - Most people have either asymptomatic or non-anginal pain which leads us to think that this particular features might not be a good indicator of heart failure risks.  
+ - Cholesterol values at 0 is unrealistic, and as it has been previously adressed as possible risks/unknowns affecting the quality and presicion of analysis.  
+ - Fasting sugar level in most cases is 0 (means the values are below 120 mg/dL), possibly suggesting that it does not have strong correlation with heart disease diagnosis.  
+ - Resting ESG records are predominately normal with significantly less cases of abnormal ST waves and left ventricular hypertrophy.  
+ - Maximum Heart rate is normally distrubuted with some outliers.  
+ - Almost evenly split value counts between people who experience exercise induced angina and those who don't.  
+ - Distrubtion of OldPeak data confirmes that about 45% of the records have normal oldpeak values and about 55% of the records significantly skewed to the right.  
+ - ST Slope values mainly split between Up and Flat categories and as these two categories are often associated with the heart disease, therefore are of big interest.  
+ - Dataset contains 508 records of heart disease and 410 records of absense of heart disease.  
+ 
+ 3. **Statistical summaries:**
+ - **Average Age of people with heart Disease:** 55.90 y.o. | Male: 55.87 y.o.| Female: 56.18 y.o.
+ - **Percentage of males with heart Disease:** 90.16%   
+ - **Percentage of females with heart Disease:** 9.84%  
+ - **Mean RestingBP for people with Heart Disease:** 134.19  
+ - **Mean Cholesterol for people with Heart Disease:** 175.94  
+ - **Mean FastingBS for people with Heart Disease:** 0.33  
+ - **Mean MaxHR for people with Heart Disease:** 127.66  
+
 
 ![alt text](images/distribution-features-over-age.png)
 
 *Observations:*
 
-1.People in the 20-29 age group are less likely to have HeartDisease.
-- 2.Cholesterol levels are higher in individuals with No HeartDisease compared to those with HeartDisease.
-- 3.People without HeartDisease have higher MaxHR compared to those with HeartDisease.
-- 4.Oldpeak values for people with HeartDisease are >0.9 in all population, whereas those without are <=0.8
+1.People in the 20-29 age group are less likely to have Heart Disease.
+- 2.Cholesterol levels are higher in individuals with No Heart Disease compared to those with Heart Disease.
+- 3.People without Heart Disease have higher MaxHR compared to those with Heart Disease.
+- 4.Oldpeak values for people with Heart Disease are >0.9 in all population, whereas those without the disease are <=0.8
 
 ## Conclusion
 
