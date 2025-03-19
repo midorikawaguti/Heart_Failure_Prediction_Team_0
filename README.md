@@ -57,16 +57,16 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`Sex`** : sex of the patient [M: Male, F: Female]
 - **`ChestPainType`** : chest pain type [
   TA: Typical Angina, or common heart related chest pain;
-   ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;
-   NAP: Non-Anginal Pain, pain not related to heart;
-   ASY: Asymptomatic, or lack of pain but not nessesarily absence of heart issues]
+  ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;
+  NAP: Non-Anginal Pain, pain not related to heart;
+  ASY: Asymptomatic, or lack of pain but not nessesarily absence of heart issues]
 - **`RestingBP`** : resting blood pressure [mm Hg]
 - **`Cholesterol`** : serum cholesterol [mm/dl]
 - **`FastingBS`** : fasting blood sugar [1: if FastingBS > 120 mg/dl, 0: otherwise]
 - **`RestingECG`** : resting electrocardiogram results [
   Normal: Normal,
-   ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV),
-   LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
+  ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV),
+  LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
 - **`MaxHR`** : maximum heart rate achieved [Numeric value between 60 and 202]
 - **`ExerciseAngina`** : exercise-induced angina, or chest pain during physical activity [Y: Yes, N: No]
 - **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression]
@@ -248,7 +248,6 @@ The model was refitted using F1-score as the primary optimization metric. Since 
   <img src="images/ShapSummary.png" width="60%" height="60%">
    <figcaption><strong><em>Figure 8: Summary Shap Values</em></strong></figcaption>
 </figure><br><br>
-
 
 ### _Observations:_
 
