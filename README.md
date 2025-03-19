@@ -67,8 +67,6 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping] from ECG readings
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
 
-  ![alt text](images/data_overview.png)
-
 In order to execute the project we plan to use following libraries:
  + Numpy
  + pandas
@@ -155,6 +153,10 @@ During internal discussion with the team we uncovered the following risks:
 - 2.Cholesterol levels are higher in individuals with No Heart Disease compared to those with Heart Disease.
 - 3.People without Heart Disease have higher MaxHR compared to those with Heart Disease.
 - 4.Oldpeak values for people with Heart Disease are >0.9 in all population, whereas those without the disease are <=0.8
+
+4. **Correlation between Heart disease cases and Exercise0Induced Angina**
+From the previous visualizatons we concluded that number of heart disease cases split in the same way as number of Exercise-induced angina we decided to look deeper to see if any correlation between these two features exist. The below plot suggests that in most cases when people don't experience angina induced by exercise they don't have a heart disease. And vice versa, most people who have heart failure experience heart pain during exercise.
+![alt text](image-2.png)
 
 ## Conclusion
 
