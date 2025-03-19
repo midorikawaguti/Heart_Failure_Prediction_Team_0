@@ -1,10 +1,10 @@
 # Heart failure prediction model
 DSI - Cohort 5 - Team 0 project
 ## Members:
- + Tatiana Uemura [link](https://github.com/midorikawaguti)
- + Evgenia Kveliashvili [link](https://github.com/ekveliasvili)
- + Aqib Khan [link](https://github.com/aqibkhan3)
- + Roslyn Bryan [link](https://github.com/RMB2025)
+ +  [Tatiana Uemura](https://github.com/midorikawaguti)
+ +  [Evgenia Kveliashvili](https://github.com/ekveliasvili)
+ +  [Aqib Khan](https://github.com/aqibkhan3)
+ +  [Roslyn Bryan](https://github.com/RMB2025)
 
 ## Overview
 
@@ -146,11 +146,11 @@ During internal discussion with the team we uncovered the following risks:
  + A scatterplot was constructed to investigate deeper the potential correlation between SL_Slope (representing the ST segment slope as recorded on an ECG) and Oldpeak (a numerical measurement indicating ST depression relative to rest). The scatterplot provides a visual representation of the relationship between these two variables, helping to identify patterns, trends, or potential linear associations.
 
 <p align="center">
-  <img src="images/ST_slope_Old_peak.png" width="70%" height="70%">
+  <img src="images/ST_slope_Old_peak.png" width="60%" height="60%">
 </p>
 
 <p align="center">
-  <img src="images/ST_slope_Oldpeak_proportions.png" width="70%" height="70%">
+  <img src="images/ST_slope_Oldpeak_proportions.png" width="80%" height="80%">
 </p>
 
  - We can see that a significant number of heart failure cases occur with ST_slope reading flat or down, also oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition
@@ -159,7 +159,9 @@ During internal discussion with the team we uncovered the following risks:
 
 
 3. **Shap Summary**
-![alt text](images/ShapSummary.png)
+<p align="center">
+  <img src="images/ShapSummary.png" width="60%" height="60%">
+</p>
 
 *Observations:*
 
