@@ -76,7 +76,7 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
 
 <figure align="center">
-  <img src="images/Raw_data_Overview.png" width="85%" height="85%">
+  <img src="images/Raw_data_Overview.png">
    <figcaption><strong><em>Figure 1: Raw Data Overview</em></strong></figcaption>
 </figure>
 
@@ -144,12 +144,12 @@ The exploratory data analysis allow us to understand patterns and relationship i
 - The following visualizations provide an overview of the data, to better understand the distribution, tendencies and variability.
 
 <figure align="center">
-  <img src="images/distributions_features_over_age.png" width="70%" height="70%">
+  <img src="images/distributions_features_over_age.png" >
    <figcaption><strong><em>Figure 2: Features Distributions Over Age</em></strong></figcaption>
 </figure><br><br><br><br>
 
 <figure align="center">
-  <img src="images/proportions_categorical_features.png" width="70%" height="70%">
+  <img src="images/proportions_categorical_features.png">
    <figcaption><strong><em>Figure 3: Probability of Heart Disease for Categorical Features </em></strong></figcaption>
 </figure><br><br>
 
@@ -202,7 +202,7 @@ The exploratory data analysis allow us to understand patterns and relationship i
 The correlation heatmap allows to analyze how features correlate to each other. Darker and more intense colours represent stronger relationships (positive or negative). Neutral colours indicate weaker or no relationships.
 
 <figure align="center">
-  <img src="images/Heatmap.png" width="70%" height="70%">
+  <img src="images/Heatmap.png">
    <figcaption><strong><em>Figure 4: Correlation Heatmap</em></strong></figcaption>
 </figure><br><br>
 
@@ -227,14 +227,14 @@ The correlation heatmap allows to analyze how features correlate to each other. 
 #### Given the strong link between ST_Slope and Oldpeak, we further investigate their relationship through visualization.
 
 <figure align="center">
-  <img src="images/ST-segment-depression-upsloping-downsloping-horizontal.png" width="60%" height="60%">
+  <img src="images/ST-segment-depression-upsloping-downsloping-horizontal.png" width="75%" height="75%">
    <figcaption><strong><em>Figure 5: Visual representation of ST slope and St depression (Oldpeak) info from ECG readings</em></strong></figcaption>
 </figure><br><br>
 
 - The following plot was constructed to investigate deeper the potential correlation between ST_Slope and Oldpeak. It provides a visual representation of the relationship between these two variables, helping to identify potential associations.
 
 <figure align="center">
-  <img src="images/ST_slope_Old_peak.png" width="60%" height="60%">
+  <img src="images/ST_slope_Old_peak.png" width="70%" height="70%">
    <figcaption><strong><em>Figure 6: ST_Slope vs OldPeak</em></strong></figcaption>
 </figure><br><br>
 
@@ -262,12 +262,12 @@ The SHAP values were calculated based on the results of a K-Nearest Neighbors (K
 The model was refitted using F1-score as the primary optimization metric. Since F1-score balances precision (minimizing false positives) and recall (minimizing false negatives), it is particularly great in health-related predictions, where both false alarms and missed diagnoses can have serious consequences.
 
 <figure align="center">
-  <img src="images/GlobalBarPlot.png" width="60%" height="60%">
+  <img src="images/GlobalBarPlot.png">
    <figcaption><strong><em>Figure 7: Global Bar Plot - Shap Values</em></strong></figcaption>
 </figure><br><br>
 
 <figure align="center">
-  <img src="images/ShapSummary.png" width="60%" height="60%">
+  <img src="images/ShapSummary.png">
    <figcaption><strong><em>Figure 8: Summary Shap Values</em></strong></figcaption>
 </figure><br><br>
 
@@ -301,7 +301,7 @@ These values reinforce most of what have been observed in the previous visualiza
 - Lower peak heart rates during stress tests are linked to a higher likelihood of heart disease.
 - This aligns with the medical understanding that a lower maximum heart rate during exercise may indicate cardiovascular limitations.
 
-- ### Exercise related
+ ### Exercise related
 
 **`Exercise Induced Angina`** SHAP value: +0.12
 - It has a high impact on heart disease predictions.
@@ -321,8 +321,12 @@ These values reinforce most of what have been observed in the previous visualiza
 
 ### 4. Conclusion
 
-In conclusion, the exploratory data analysis revealed several critical insights into cardiovascular health indicators. The correlation heatmap highlighted significant relationships, such as the negative correlation between ST_Slope and HeartDisease (-0.56). Our findings show the importance of ST segment patterns and ST depression (Oldpeak) as potential predictors of heart disease, particularly in identifying more severe cases. The scatterplot and visualizations further emphasized the link between ST slope readings and heart disease, as well as the distribution of Oldpeak values, which tend to deviate from zero in individuals with heart disease.
+The exploratory data analysis revealed several critical insights into cardiovascular health indicators. This project aimed to determine the key factors that can predict heart disease before a life-threatening hospital admission occurs. We explored various demographic, clinical, and exercise-related features of heart disease. Our key findings include:
 
-Statistical summaries revealed demographic trends, such as an average age of 55.90 for individuals with heart disease and a pronounced gender disparity, with males comprising 90.16% of cases. Additionally, other variables like cholesterol, MaxHR, and Oldpeak showed distinct differences between individuals with and without heart disease.
+1. **Exercise Related**: SHAP value analysis highlighted exercise-related features as the most influential factors in predicting heart disease. Oldpeak (ST depression induced by exercise) and Exercise-Induced Angina ranked as the top two features in the global SHAP bar plot, with contributions of +0.14 and +0.12, respectively. This suggests that an individual’s heart response to exercise plays a crucial role in model predictions. The correlation heatmap (Figure 4) further reinforces this connection, showing a strong negative correlation (-0.61) between Oldpeak and ST segment response. Notably, among individuals reporting Exercise-Induced Angina, 82.6% were diagnosed with heart disease.
 
-This project demonstrates the application of data science in healthcare. By combining exploratory analysis, predictive modeling, and visual storytelling, we can derive meaningful insights and inform early interventions for heart failure.
+2. **Clinical**: Clinical factors also had a significant impact on heart disease predictions. Our findings highlight the importance of ST segment patterns and ST depression (Oldpeak) as potential indicators of disease severity. Figure 3 illustrates that Flat and Down ST_Slope patterns are associated with heart disease in approximately 75% of cases, whereas only 12.9% of individuals with an Up ST_Slope were diagnosed with the condition. The scatterplot (Figure 6) further emphasizes the relationship between ST slope readings and Oldpeak values, revealing a noticeable deviation from zero among heart disease patients.
+
+3. **Demographic Features**:Demographic factors, while having a moderate impact on predictions, still played a role. As shown in Figure 2, the likelihood of heart disease increases with age. Additionally, while men were more frequently diagnosed with heart disease (56% among all mens in the dataset), women also exhibited a notable proportion (22% among all womens in the dataset).
+
+This project demonstrates the power of data science in healthcare. By combining exploratory analysis, predictive modeling, and visual storytelling, we can extract meaningful insights to aid in early detection and intervention for heart disease, ultimately contributing to improved healthcare outcomes.
