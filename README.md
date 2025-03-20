@@ -157,22 +157,22 @@ The exploratory data analysis allow us to understand patterns and relationship i
 
 #### Demographic Trends
 
-- Older groups have more probabilit of heart disease.
-- People in the 20-29 age group are less likely to have HeartDisease.
+- Older groups have more probability of heart disease. There is a 20% increase in the likelihood of heart disease when comparing individuals aged 50-59 to those in the 60-69 age group. 
+- People in the 20-29 age group are less likely to have HeartDisease. In the analyzed data set, there was no record of a patient with heart disease in this age group.
 - The proportion of women (22%) who develop heart disease are lower than men (56%)
 
 #### Clinical
 
-- Cholesterol levels are higher in individuals with HeartDisease.
-- Higher MaxHR (Maximun Heart Rate) is associated with lower heart disease risk, decreasing with age.
+- Cholesterol levels are higher in individuals with heart disease aged 20-59, with similar averages across these groups. However, in the 60-79 age group, cholesterol is not a strong predictor, as those with heart disease have lower average cholesterol than those without. This suggests other factors may play a larger role in heart disease risk for older adults, such as age-related metabolic changes or the impact of cholesterol-lowering treatments.
+- The average maxHR (Maximun Heart Rate) decreases across group ages. Additionally, higher MaxHR is associated with lower likelihood of heart disease risk, decreasing with age.
 - Oldpeak values greater than 0.9 are common in heart disease cases, while non-disease cases tend to have values ≤ 0.8
-- Asymptomatic chest pain is associated with a 74% probability of heart disease.
+- 74% of people who have heart disease had asymptomatic chest pain (ASY), which means that routine check-ups are important for those with other risk factors.
 - Most cases with Flat and Down ST_Slope are linked to heart disease, while only 12.9% of individuals with an Up ST_Slope have heart disease.
-- Elevated fasting blood sugar levels increase heart disease risk.
+- Elevated fasting blood sugar (FastingBS) levels increase the likelihood of developing heart disease. In the data, high FastingBS levels are associated with a 65.6% probability of heart disease, while low levels correspond to a 44.1% probability. Although there is a difference in these probabilities, the fact that they are relatively close suggests that FastingBS alone may not be a strong predictor of heart disease risk. Combining FastingBS with other factors could provide a better assessment of heart disease risk.
 
 #### Exercise related
 
-- Most individuals who experience angina during exercise are diagnosed with heart disease. And vice versa, most people whithout angina during exercise are less likely to have it.
+- Most individuals who experience angina during exercise  - 82.6% (Exercise Angina = 'Y') were diagnosed with heart disease. And vice versa, most people whithout angina during exercise are less likely to have it (25.9%).
 
 ---
 
