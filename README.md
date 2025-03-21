@@ -281,34 +281,27 @@ The model was refitted using F1-score as the primary optimization metric. Since 
 
 These values reinforce most of what have been observed in the previous visualizations.
 
-
 ### Demographic Trends
 **`Age`**: SHAP value: +0.04
  - Age has a moderate impact on heart disease predictions.
  - While younger individuals have a lower predicted risk, older age increases the predicted risk of heart disease.
 - This trend is also visible in Figure 2, which illustrates heart disease probability across different age groups.
 
-
-
-### The visual representation of ST slope and ST depression info from ECG readings
-![alt text](images/ST-segment-depression-upsloping-downsloping-horizontal.png)
-
-
 **`Gender`**: SHAP value: +0.03
 - Gender has a moderate impact on heart disease predictions.
 - Since the values were encoded, men are represented by 1 and women by 0.
 - In Figure 8:
-      -  Blue dots (lower SHAP values, representing women) are mostly on the left, indicating a lower risk of heart disease. 
-      -  Red dots (higher SHAP values, representing men) are clustered around 0, suggesting that being men has little to no positive or negative impact on the prediction.
+  -  Blue dots (lower SHAP values, representing women) are mostly on the left, indicating a lower risk of heart disease. 
+  -  Red dots (higher SHAP values, representing men) are clustered around 0, suggesting that being men has little to no positive or negative impact on the prediction.
 
 ### Clinical
 
 **`ST_Slope`** SHAP value: Up(+0.07) | Flat(+0.06)
 - ST_Slope plays a significant role in heart disease predictions. A downward or flat ST slope often signals abnormal heart response during exercise, indicating higher risk.
 - Encoding Explanation:
-   ST_Slope_Up = 1 → Presence of an upward slope.
-   ST_Slope_Flat = 1 → Presence of a flat slope.
-   If both ST_Slope_Up = 0 and ST_Slope_Flat = 0, it implies a Downward ST slope (which is not explicitly encoded but inferred).
+   - ST_Slope_Up = 1 → Presence of an upward slope.
+   - ST_Slope_Flat = 1 → Presence of a flat slope.
+   - If both ST_Slope_Up = 0 and ST_Slope_Flat = 0, it implies a Downward ST slope (which is not explicitly encoded but inferred).
 
 **`Max HR (Maximun Heart Rate)`** SHAP value: +0.06
 - Lower peak heart rates during stress tests are linked to a higher likelihood of heart disease.
@@ -317,65 +310,28 @@ These values reinforce most of what have been observed in the previous visualiza
 
  ### Exercise related
 
- 2. **Distrubition of each of 12 features from our dataset**
- We have build the visualization to review how each of 12 features distributed in our dataset
-
-![alt text](image-1.png)
-
- *Observations from the above visualization:*
-
- - Age distribution seems to be normal with most people centered around 45-60 y.o  
- - There are more males than females in dataset, suggesting that we might need to consider stratification when building the predictive model.  
- - Most people have either asymptomatic or non-anginal pain which leads us to think that this particular features might not be a good indicator of heart failure risks.  
- - Cholesterol values at 0 is unrealistic, and as it has been previously adressed as possible risks/unknowns affecting the quality and presicion of analysis.  
- - Fasting sugar level in most cases is 0 (means the values are below 120 mg/dL), possibly suggesting that it does not have strong correlation with heart disease diagnosis.  
- - Resting ESG records are predominately normal with significantly less cases of abnormal ST waves and left ventricular hypertrophy.  
- - Maximum Heart rate is normally distrubuted with some outliers.  
- - Almost evenly split value counts between people who experience exercise induced angina and those who don't.  
- - Distrubtion of OldPeak data confirmes that about 45% of the records have normal oldpeak values and about 55% of the records significantly skewed to the right.  
- - ST Slope values mainly split between Up and Flat categories and as these two categories are often associated with the heart disease, therefore are of big interest.  
- - Dataset contains 508 records of heart disease and 410 records of absense of heart disease.  
- 
- 3. **Statistical summaries:**
- - **Average Age of people with heart Disease:** 55.90 y.o. | Male: 55.87 y.o.| Female: 56.18 y.o.
- - **Percentage of males with heart Disease:** 90.16%   
- - **Percentage of females with heart Disease:** 9.84%  
- - **Mean RestingBP for people with Heart Disease:** 134.19  
- - **Mean Cholesterol for people with Heart Disease:** 175.94  
- - **Mean FastingBS for people with Heart Disease:** 0.33  
- - **Mean MaxHR for people with Heart Disease:** 127.66  
-
-
-
 **`Exercise Induced Angina`** SHAP value: +0.12
 - It has a high impact on heart disease predictions.
 - Since the values were encoded, ExerciseAngina_Y are represented by 1 and No by 0.
 - In Figure 8:
-      -  Blue dots (lower SHAP values, representing No) are clustered around 0, suggesting that 'No' Exercise Angina has little to no positive or negative impact on the prediction.
-      -  Red dots (higher SHAP values, representing Yes) are mostly on the right, suggesting that being 'Yes' Exercise Angina has positive impact on the prediction.
+  
+   -  Blue dots (lower SHAP values, representing No) are clustered around 0, suggesting that 'No' Exercise Angina has little to no positive or negative impact on the prediction.
+   -  Red dots (higher SHAP values, representing Yes) are mostly on the right, suggesting that being 'Yes' Exercise Angina has positive impact on the prediction.
+  
 - Exercise Angina strongly contributes to positive predictions.
 - It aligns with the data in Figure 3, where 82.6% of individuals who experienced Exercise Angina were diagnosed with heart disease.
   
 **`Oldpeak (ST depression)`** SHAP value: +0.14
 -  Oldpeak emerges as a crucial predictor, confirming that individuals with significant ST depression on an ECG are highly likely to have heart disease.
 - In Figure 8:
-      -  Blue dots (lower SHAP values) are mostly on the left, meaning lower Oldpeak values decrease the predicted risk of heart disease.
-      -  Red dots (higher SHAP values) are mostly spread to the right, suggesting that higher Oldpeak values have a strong positive impact on the prediction, increasing the likelihood of heart disease.
+
+   -  Blue dots (lower SHAP values) are mostly on the left, meaning lower Oldpeak values decrease the predicted risk of heart disease.
+   -  Red dots (higher SHAP values) are mostly spread to the right, suggesting that higher Oldpeak values have a strong positive impact on the prediction, increasing the likelihood of heart disease.
   
 
 ### 4. Conclusion
 
 The exploratory data analysis revealed several critical insights into cardiovascular health indicators. This project aimed to determine the key factors that can predict heart disease before a life-threatening hospital admission occurs. We explored various demographic, clinical, and exercise-related features of heart disease. Our key findings include:
-
-1.People in the 20-29 age group are less likely to have Heart Disease.
-- 2.Cholesterol levels are higher in individuals with No Heart Disease compared to those with Heart Disease.
-- 3.People without Heart Disease have higher MaxHR compared to those with Heart Disease.
-- 4.Oldpeak values for people with Heart Disease are >0.9 in all population, whereas those without the disease are <=0.8
-
-4. **Correlation between Heart disease cases and Exercise0Induced Angina**
-From the previous visualizatons we concluded that number of heart disease cases split in the same way as number of Exercise-induced angina we decided to look deeper to see if any correlation between these two features exist. The below plot suggests that in most cases when people don't experience angina induced by exercise they don't have a heart disease. And vice versa, most people who have heart failure experience heart pain during exercise.
-![alt text](image-2.png)
-
 
 1. **Exercise Related**: SHAP value analysis highlighted exercise-related features as the most influential factors in predicting heart disease. Oldpeak (ST depression induced by exercise) and Exercise-Induced Angina ranked as the top two features in the global SHAP bar plot, with contributions of +0.14 and +0.12, respectively. This suggests that an individual’s heart response to exercise plays a crucial role in model predictions. The correlation heatmap (Figure 4) further reinforces this connection, showing a strong negative correlation (-0.61) between Oldpeak and ST segment response. Notably, among individuals reporting Exercise-Induced Angina, 82.6% were diagnosed with heart disease.
 
