@@ -118,6 +118,12 @@ In order to execute the project we plan to use following libraries:
 - sklearn
 - seaborn
 
+## Risks and Unknowns
+
+During internal discussion with the team we uncovered the following risks:
+
+- Column "Cholesterol" contains 0 (zero) values, and while rare genetic conditions might cause cholesterol level be very low, it's extremely unlikely to be measured at 0. That means, that we need either to impute some values instead of 0 or delete 172 records from the dataset. If we choose to delete these records, we may risk losing valuable information, potentially affecting the robustness and accuracy of our analysis. On the other hand, imputing mean values comes with its own challenges, such as introducing bias or assumptions that may not accurately reflect the true distribution of cholesterol levels.
+  
 ## Data preprocessing
 
 **Missing Values**
@@ -135,11 +141,6 @@ In order to execute the project we plan to use following libraries:
 
 - In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding or label encoder, depending on the use case.
 
-## Risks and Unknowns
-
-During internal discussion with the team we uncovered the following risks:
-
-- Column "Cholesterol" contains 0 values, and while rare genetic condirtions might cause cholesterol level be very low, it's extremely unlikely to be measured at 0. That means, that we need either to impute some values instead of 0 or delete 172 records from the dataset.If we choose to delete these records, we may risk losing valuable information, potentially affecting the robustness and accuracy of our analysis. On the other hand, imputing mean values comes with its own challenges, such as introducing bias or assumptions that may not accurately reflect the true distribution of cholesterol levels.
 
 ## Exploratory Data Analysis
 
