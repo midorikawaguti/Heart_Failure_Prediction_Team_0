@@ -76,7 +76,7 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`ExerciseAngina`** : exercise-induced angina, or chest pain during physical activity [Y: Yes, N: No]
 - **`Oldpeak`** : oldpeak = ST [Numeric value measured in depression]
   _ST depression refers to a finding on an electrocardiogram, wherein the_ _trace in the ST segment is abnormally low below the baseline._
-  ![link](/Users/evgeniakveliashvili/Desktop/DSI_projects/Heart_Failure_Prediction_Team_0/images/ST_depression_illustration.png)
+ ![alt text](images/ST_depression_illustration.png) 
 - **`ST_Slope`** : the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping] from ECG readings
 - **`HeartDisease`** : output class [1: heart disease, 0: Normal]
 
