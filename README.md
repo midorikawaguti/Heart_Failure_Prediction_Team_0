@@ -344,3 +344,4 @@ This project demonstrates the power of data science in healthcare. By combining 
 
 Links to the video:
 1. Evgenia Kveliashvili [link](https://www.loom.com/share/0c3fc31eec684be0870998d4142780eb)
+2. Roslyn Bryan [link](https://drive.google.com/drive/folders/1eYqf_RzPZL5f7YcASIQ2ioKUDoUBxSSI?usp=sharing)
