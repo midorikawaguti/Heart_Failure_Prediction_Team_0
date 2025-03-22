@@ -340,3 +340,6 @@ The exploratory data analysis revealed several critical insights into cardiovasc
 3. **Demographic Features**:Demographic factors, while having a moderate impact on predictions, still played a role. As shown in Figure 2, the likelihood of heart disease increases with age. Additionally, while men were more frequently diagnosed with heart disease (56% among all mens in the dataset), women also exhibited a notable proportion (22% among all womens in the dataset).
 
 This project demonstrates the power of data science in healthcare. By combining exploratory analysis, predictive modeling, and visual storytelling, we can extract meaningful insights to aid in early detection and intervention for heart disease, ultimately contributing to improved healthcare outcomes.
+
+Links to the video:
+1. Evgenia Kveliashvili [link](https://www.loom.com/share/0c3fc31eec684be0870998d4142780eb)
