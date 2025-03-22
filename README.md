@@ -58,19 +58,19 @@ This dataset contains combined data from 5 independent sources and has a total o
 - **`Sex`** : sex of the patient [M: Male, F: Female]
 - **`ChestPainType`** : chest pain type [
 
-  TA: Typical Angina, or common heart related chest pain;
-  ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;
-  NAP: Non-Anginal Pain, pain not related to heart;
-  ASY: Asymptomatic, or lack of pain but not nessesarily absence of heart issues]
+  - TA: Typical Angina, or common heart related chest pain;
+  - ATA: Atypical Angina, or chest discomfort that does not fit any type of pain;
+  - NAP: Non-Anginal Pain, pain not related to heart;
+  - ASY: Asymptomatic, or lack of pain but not necessarily absence of heart issues]
 
 - **`RestingBP`** : resting blood pressure [mm Hg]
 - **`Cholesterol`** : serum cholesterol [mm/dl]
 - **`FastingBS`** : fasting blood sugar [1: if FastingBS > 120 mg/dl, 0: otherwise]
 - **`RestingECG`** : resting electrocardiogram results [
 
-  Normal: Normal,
-  ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV),
-  LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
+  - Normal: Normal,
+  - ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV),
+  - LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
 
 - **`MaxHR`** : maximum heart rate achieved [Numeric value between 60 and 202]
 - **`ExerciseAngina`** : exercise-induced angina, or chest pain during physical activity [Y: Yes, N: No]
@@ -248,7 +248,7 @@ The correlation heatmap allows to analyze how features correlate to each other. 
 ### _Observations:_
 
 - Significant number of heart failure cases occur with ST_slope reading flat or down.
-- Oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition
+- Oldpeak values associated with heart disease are spread far from 0 values, with 0 values being more representative for healthy condition.
 - This finding also support the fact that mild ST depression - oldpeak (less than 0.5 mm) is often considered a normal variant and may occur during physical exercise or in the absence of other abnormalities.
 - While significant ST depression (0.5 mm or more) can indicate myocardial ischemia (reduced blood flow to the heart muscle) and warrants further evaluation.
 
@@ -334,10 +334,10 @@ These values reinforce most of what have been observed in the previous visualiza
 
 The exploratory data analysis revealed several critical insights into cardiovascular health indicators. This project aimed to determine the key factors that can predict heart disease before a life-threatening hospital admission occurs. We explored various demographic, clinical, and exercise-related features of heart disease. Our key findings include:
 
-1. **Exercise Related**: SHAP value analysis highlighted exercise-related features as the most influential factors in predicting heart disease. Oldpeak (ST depression induced by exercise) and Exercise-Induced Angina ranked as the top two features in the global SHAP bar plot, with contributions of +0.14 and +0.12, respectively. This suggests that an individual’s heart response to exercise plays a crucial role in model predictions. The correlation heatmap (Figure 4) further reinforces this connection, showing a strong negative correlation (-0.61) between Oldpeak and ST segment response. Notably, among individuals reporting Exercise-Induced Angina, 82.6% were diagnosed with heart disease.
+1. **Exercise Related**: SHAP value analysis highlighted exercise-related features as the most influential factors in predicting heart disease. Oldpeak (ST depression induced by exercise) and Exercise-Induced Angina ranked as the top two features in the global SHAP bar plot, with contributions of +0.14 and +0.12, respectively. This suggests that an individual’s heart response to exercise plays a crucial role in model predictions. The correlation heatmap (Figure 4) further reinforces this connection, showing a strong negative correlation (-0.61) between Oldpeak and ST segment response. Notably, among individuals reporting Exercise-Induced Angina, 82.6% were diagnosed with heart disease. With that, if a person experiences chest pain or discomfort during exercise (Exercise-Induced Angina), they should seek medical evaluation, since it is a high indicator for heart disease. 
 
-2. **Clinical**: Clinical factors also had a significant impact on heart disease predictions. Our findings highlight the importance of ST segment patterns and ST depression (Oldpeak) as potential indicators of disease severity. Figure 3 illustrates that Flat and Down ST_Slope patterns are associated with heart disease in approximately 75% of cases, whereas only 12.9% of individuals with an Up ST_Slope were diagnosed with the condition. The scatterplot (Figure 6) further emphasizes the relationship between ST slope readings and Oldpeak values, revealing a noticeable deviation from zero among heart disease patients.
+3. **Clinical**: Clinical factors also had a significant impact on heart disease predictions. Our findings highlight the importance of ST segment patterns and ST depression (Oldpeak) as potential indicators of disease severity. Figure 3 illustrates that Flat and Down ST_Slope patterns are associated with heart disease in approximately 75% of cases, whereas only 12.9% of individuals with an Up ST_Slope were diagnosed with the condition. The scatterplot (Figure 6) further emphasizes the relationship between ST slope readings and Oldpeak values, revealing a noticeable deviation from zero among heart disease patients. Given that, although clinical factors cannot be identified without proper medical assessment, they play a crucial role in diagnosis and should be investigated if any symptoms arise.
 
-3. **Demographic Features**:Demographic factors, while having a moderate impact on predictions, still played a role. As shown in Figure 2, the likelihood of heart disease increases with age. Additionally, while men were more frequently diagnosed with heart disease (56% among all mens in the dataset), women also exhibited a notable proportion (22% among all womens in the dataset).
+4. **Demographic Features**: Demographic factors, while having a moderate impact on predictions, still played a role. As shown in Figure 2, the likelihood of heart disease increases with age. Additionally, while men were more frequently diagnosed with heart disease (56% among all men in the dataset), women also exhibited a notable proportion (22% among all women in the dataset). Knowing that, regular screenings become increasingly important with age, even more for men. However, women experiencing symptoms should not ignore them.
 
 This project demonstrates the power of data science in healthcare. By combining exploratory analysis, predictive modeling, and visual storytelling, we can extract meaningful insights to aid in early detection and intervention for heart disease, ultimately contributing to improved healthcare outcomes.
