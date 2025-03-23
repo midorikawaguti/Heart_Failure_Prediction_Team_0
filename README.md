@@ -86,9 +86,9 @@ This dataset contains combined data from 5 independent sources and has a total o
    <figcaption><strong><em>Figure 1: Raw Data Overview</em></strong></figcaption>
 </figure>
 
-### **Observations**
+### _Observations:_
 
-### Demographic
+### Demographic Trends
 
 - Age distribution seems to be normal with most people centered around 45-60 y.o
 - There are more males than females in dataset, suggesting that we might need to consider stratification when building the predictive model.
@@ -110,13 +110,13 @@ This dataset contains combined data from 5 independent sources and has a total o
 
 ## Libraries
 
-In order to execute the project we plan to use following libraries:
+In order to execute the project following libraries were used:
 
-- Numpy
-- pandas
-- matplotlib
-- sklearn
-- seaborn
+-  `Numpy & Pandas`: used for understanding, manipulation and cleaning the dataset.
+-  `Matplotlib & Seaborn`: used to create visualizations that helped to explore relationships and patterns. They also, allow for customizations of visualizations.
+-  `Scikit-learn`: helps develop the model and perform evaluation, including preprocessing, training classification models, and assessing performance. 
+-  `SHAP`: used to interpret model predictions and provide insigths into which factors contribute the most to heart disease.
+
 
 ## Risks and Unknowns
 
@@ -128,8 +128,8 @@ During internal discussion with the team we uncovered the following risks:
 
 **Missing Values**
 
-- In order to understand the dataset we checked its basic structure and content.
-- Before performing any preprocessing, we reviewed the dataset to check for missing values. Ensuring data completeness is crucial for building reliable models or vizualizations. After inspecting the dataset, we confirmed that there were no missing values.
+- In order to understand the dataset the basic structure and content were checked.
+- Before performing any preprocessing, the dataset was reviewed to check for missing values. Ensuring data completeness is crucial for building reliable models or vizualizations. After inspecting the dataset, it was confirmed that there were no missing values.
 
 **Data Consistency**
 
@@ -137,7 +137,7 @@ During internal discussion with the team we uncovered the following risks:
 - This approach was chosen instead of imputing average cholesterol because doing so create a false representation of the data, as cholesterol levels are not uniformly distributed. This was confirmed by running the models, where imputing average cholesterol resulted in a worst scenario in terms of F1-score ( F1-Score for KNN Classification - Replacing with average: 0.82 | Dropping records : 0.84)
 - Additionaly, we observed that 88% of records with cholesterol =0 were associated with heart disease. Keeping these values as zero or replacing them with the average cholesterol for Cholesterol > 0 (244.6 mm/dL) could affect the relationship between cholesterol and the occurence of heart disease, leading the model to identify misleading patterns. Notably, 244.6 mm/dL is below the average cholesterol for individuals with heart disease (251.06 mm/dL).
 
-  **Data Standardization**
+**Data Standardization**
 
 - In order to work with only numerical values we converted categorical variables into numerical format using one-hot encoding or label encoder, depending on the use case.
 
@@ -283,12 +283,12 @@ The model was refitted using F1-score as the primary optimization metric. Since 
 These values reinforce most of what have been observed in the previous visualizations.
 
 ### Demographic Trends
-**`Age`**: SHAP value: +0.04
+**`Age`** SHAP value: +0.04
  - Age has a moderate impact on heart disease predictions.
  - While younger individuals have a lower predicted risk, older age increases the predicted risk of heart disease.
 - This trend is also visible in Figure 2, which illustrates heart disease probability across different age groups.
 
-**`Gender`**: SHAP value: +0.03
+**`Gender`** SHAP value: +0.03
 - Gender has a moderate impact on heart disease predictions.
 - Since the values were encoded, men are represented by 1 and women by 0.
 - In Figure 8:
@@ -342,6 +342,7 @@ The exploratory data analysis revealed several critical insights into cardiovasc
 
 This project demonstrates the power of data science in healthcare. By combining exploratory analysis, predictive modeling, and visual storytelling, we can extract meaningful insights to aid in early detection and intervention for heart disease, ultimately contributing to improved healthcare outcomes.
 
-Links to the video:
-1. Evgenia Kveliashvili [link](https://www.loom.com/share/0c3fc31eec684be0870998d4142780eb)
-2. Roslyn Bryan [link](https://drive.google.com/drive/folders/1eYqf_RzPZL5f7YcASIQ2ioKUDoUBxSSI?usp=sharing)
+### 5. Project Reflections & Learning Experice:
+1. [Evgenia Kveliashvili ](https://www.loom.com/share/0c3fc31eec684be0870998d4142780eb)
+2. [Roslyn Bryan](https://drive.google.com/drive/folders/1eYqf_RzPZL5f7YcASIQ2ioKUDoUBxSSI?usp=sharing)
+3. [Tatiana Kawaguti](https://youtu.be/DG2fd5EYzZg) 
